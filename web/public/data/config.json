@@ -1,0 +1,23 @@
+{
+  "_catatan": "Harus sinkron dengan konstanta di AOASchedulingSim.java. Jika Java diubah, ubah juga berkas ini dan jalankan ulang node tools/parity_check.mjs.",
+  "cloudsimVersion": "7.0.1",
+  "vm": { "mips": [1000, 1500, 2000, 2500], "pesPerVm": 1, "totalVcpu": 4, "cloudletScheduler": "CloudletSchedulerSpaceShared (FIFO per VM)" },
+  "datasetSizes": [100, 200, 500, 1000],
+  "runsPerSize": 10,
+  "datasetSeed": 2026,
+  "algoSeedBase": 7,
+  "datasetMix": [
+    { "kategori": "kecil",  "peluang": 0.50, "lengthMiMin": 2000,  "lengthMiMax": 10000 },
+    { "kategori": "sedang", "peluang": 0.35, "lengthMiMin": 10000, "lengthMiMax": 40000 },
+    { "kategori": "besar",  "peluang": 0.15, "lengthMiMin": 40000, "lengthMiMax": 120000 }
+  ],
+  "aoa": { "popSize": 50, "maxIter": 500, "alpha": 5, "mu": 0.5, "moaMin": 0.2, "moaMax": 1.0, "wMakespan": 0.7, "wLbi": 0.3 },
+  "metrics": [
+    { "key": "makespan_s",            "nama": "Makespan",                "satuan": "detik",      "arah": "turun", "rumus": "T = \\max(finish_i) - \\min(start_i)" },
+    { "key": "utilisasi_vm_pct",      "nama": "Utilisasi VM",            "satuan": "%",          "arah": "naik",  "rumus": "100 \\times \\overline{u_v},\\; u_v = \\Delta busy_v / \\Delta total\\ CPU" },
+    { "key": "throughput_task_per_s", "nama": "Throughput",              "satuan": "task/detik", "arah": "naik",  "rumus": "N_{sukses} / T" },
+    { "key": "respons_rata2_s",       "nama": "Waktu respons rata-rata", "satuan": "detik",      "arah": "turun", "rumus": "\\overline{finish_i - submit_i}" },
+    { "key": "lbi",                   "nama": "Load Balancing Index",    "satuan": "",           "arah": "turun", "rumus": "\\overline{(u_v - \\overline{u})^2}" },
+    { "key": "rur_cpu_pct",           "nama": "RUR CPU",                 "satuan": "%",          "arah": "naik",  "rumus": "100 \\times \\sum CPUsec_i / (4 \\times T)" }
+  ]
+}

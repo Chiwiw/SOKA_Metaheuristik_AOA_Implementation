@@ -1,0 +1,105 @@
+=== AOA Task Scheduling di CloudSim ===
+Waktu mulai   : Sun Nov 08 16:54:41 WIB 2026
+VM (MIPS)     : [1000.0, 1500.0, 2000.0, 2500.0]  | total vCPU = 4
+AOA           : pop=50, iterasi=500, alpha=5.0, mu=0.5, MOA=[0.2,1.0]
+Objektif      : 0.7 x makespan/batas_bawah + 0.3 x LBI/0.25
+Pengulangan   : 10 run per ukuran, ukuran = [100, 200, 500, 1000]
+
+Dataset  100 cloudlet disimpan -> dataset_100.csv (total 2339371 MI, batas bawah makespan 334.20 s)
+Dataset  200 cloudlet disimpan -> dataset_200.csv (total 5156895 MI, batas bawah makespan 736.70 s)
+Dataset  500 cloudlet disimpan -> dataset_500.csv (total 11921955 MI, batas bawah makespan 1703.14 s)
+Dataset 1000 cloudlet disimpan -> dataset_1000.csv (total 23336688 MI, batas bawah makespan 3333.81 s)
+
+[AOA    n= 100 run= 1] makespan=   340.56 s | util= 97.98% | thr= 0.2936 task/s | resp=   176.60 s | LBI=0.000547 | RUR= 97.98% | 233 ms
+[AOA    n= 100 run= 2] makespan=   336.62 s | util= 99.41% | thr= 0.2971 task/s | resp=   180.39 s | LBI=0.000026 | RUR= 99.41% | 180 ms
+[AOA    n= 100 run= 3] makespan=   337.04 s | util= 99.22% | thr= 0.2967 task/s | resp=   171.36 s | LBI=0.000122 | RUR= 99.22% | 157 ms
+[AOA    n= 100 run= 4] makespan=   335.68 s | util= 99.56% | thr= 0.2979 task/s | resp=   174.27 s | LBI=0.000019 | RUR= 99.56% | 176 ms
+[AOA    n= 100 run= 5] makespan=   334.96 s | util= 99.79% | thr= 0.2985 task/s | resp=   169.75 s | LBI=0.000003 | RUR= 99.79% | 157 ms
+[AOA    n= 100 run= 6] makespan=   341.11 s | util= 98.21% | thr= 0.2932 task/s | resp=   176.05 s | LBI=0.000905 | RUR= 98.21% | 157 ms
+[AOA    n= 100 run= 7] makespan=   334.74 s | util= 99.82% | thr= 0.2987 task/s | resp=   177.99 s | LBI=0.000007 | RUR= 99.82% | 162 ms
+[AOA    n= 100 run= 8] makespan=   335.73 s | util= 99.54% | thr= 0.2979 task/s | resp=   172.17 s | LBI=0.000018 | RUR= 99.54% | 162 ms
+[AOA    n= 100 run= 9] makespan=   337.58 s | util= 99.07% | thr= 0.2962 task/s | resp=   178.62 s | LBI=0.000180 | RUR= 99.07% | 148 ms
+[AOA    n= 100 run=10] makespan=   335.13 s | util= 99.72% | thr= 0.2984 task/s | resp=   183.08 s | LBI=0.000007 | RUR= 99.72% | 151 ms
+[Random n= 100 run= 1] makespan=   529.19 s | util= 68.35% | thr= 0.1890 task/s | resp=   191.61 s | LBI=0.049699 | RUR= 68.35% | 0 ms
+[Random n= 100 run= 2] makespan=   449.50 s | util= 79.54% | thr= 0.2225 task/s | resp=   189.62 s | LBI=0.031771 | RUR= 79.54% | 0 ms
+[Random n= 100 run= 3] makespan=   391.13 s | util= 84.99% | thr= 0.2557 task/s | resp=   181.51 s | LBI=0.015459 | RUR= 84.99% | 0 ms
+[Random n= 100 run= 4] makespan=   572.14 s | util= 64.68% | thr= 0.1748 task/s | resp=   200.80 s | LBI=0.084333 | RUR= 64.68% | 0 ms
+[Random n= 100 run= 5] makespan=   739.82 s | util= 53.00% | thr= 0.1352 task/s | resp=   220.41 s | LBI=0.080475 | RUR= 53.00% | 0 ms
+[Random n= 100 run= 6] makespan=   494.85 s | util= 74.47% | thr= 0.2021 task/s | resp=   199.12 s | LBI=0.048261 | RUR= 74.47% | 0 ms
+[Random n= 100 run= 7] makespan=   561.31 s | util= 67.90% | thr= 0.1782 task/s | resp=   206.97 s | LBI=0.070047 | RUR= 67.90% | 0 ms
+[Random n= 100 run= 8] makespan=   566.15 s | util= 62.75% | thr= 0.1766 task/s | resp=   193.74 s | LBI=0.059599 | RUR= 62.75% | 0 ms
+[Random n= 100 run= 9] makespan=   729.90 s | util= 53.51% | thr= 0.1370 task/s | resp=   223.55 s | LBI=0.089220 | RUR= 53.51% | 0 ms
+[Random n= 100 run=10] makespan=   622.09 s | util= 62.68% | thr= 0.1607 task/s | resp=   212.43 s | LBI=0.079401 | RUR= 62.68% | 0 ms
+[AOA    n= 200 run= 1] makespan=   740.17 s | util= 99.53% | thr= 0.2702 task/s | resp=   404.74 s | LBI=0.000019 | RUR= 99.53% | 312 ms
+[AOA    n= 200 run= 2] makespan=   738.78 s | util= 99.70% | thr= 0.2707 task/s | resp=   403.69 s | LBI=0.000006 | RUR= 99.70% | 294 ms
+[AOA    n= 200 run= 3] makespan=   759.19 s | util= 97.39% | thr= 0.2634 task/s | resp=   404.18 s | LBI=0.001946 | RUR= 97.39% | 310 ms
+[AOA    n= 200 run= 4] makespan=   751.29 s | util= 98.22% | thr= 0.2662 task/s | resp=   402.79 s | LBI=0.000566 | RUR= 98.22% | 291 ms
+[AOA    n= 200 run= 5] makespan=   744.00 s | util= 99.03% | thr= 0.2688 task/s | resp=   402.07 s | LBI=0.000095 | RUR= 99.03% | 292 ms
+[AOA    n= 200 run= 6] makespan=   739.33 s | util= 99.66% | thr= 0.2705 task/s | resp=   410.48 s | LBI=0.000016 | RUR= 99.66% | 297 ms
+[AOA    n= 200 run= 7] makespan=   749.50 s | util= 98.39% | thr= 0.2668 task/s | resp=   409.51 s | LBI=0.000371 | RUR= 98.39% | 292 ms
+[AOA    n= 200 run= 8] makespan=   746.48 s | util= 98.82% | thr= 0.2679 task/s | resp=   411.41 s | LBI=0.000310 | RUR= 98.82% | 295 ms
+[AOA    n= 200 run= 9] makespan=   749.22 s | util= 98.41% | thr= 0.2669 task/s | resp=   406.92 s | LBI=0.000274 | RUR= 98.41% | 292 ms
+[AOA    n= 200 run=10] makespan=   741.79 s | util= 99.31% | thr= 0.2696 task/s | resp=   404.43 s | LBI=0.000046 | RUR= 99.31% | 296 ms
+[Random n= 200 run= 1] makespan=  1332.83 s | util= 64.09% | thr= 0.1501 task/s | resp=   510.61 s | LBI=0.076300 | RUR= 64.09% | 0 ms
+[Random n= 200 run= 2] makespan=  1496.12 s | util= 57.53% | thr= 0.1337 task/s | resp=   495.53 s | LBI=0.074588 | RUR= 57.53% | 0 ms
+[Random n= 200 run= 3] makespan=   916.38 s | util= 83.53% | thr= 0.2182 task/s | resp=   415.20 s | LBI=0.029348 | RUR= 83.53% | 0 ms
+[Random n= 200 run= 4] makespan=  1611.66 s | util= 54.41% | thr= 0.1241 task/s | resp=   493.10 s | LBI=0.086299 | RUR= 54.41% | 0 ms
+[Random n= 200 run= 5] makespan=  1006.84 s | util= 78.72% | thr= 0.1986 task/s | resp=   431.45 s | LBI=0.045618 | RUR= 78.72% | 0 ms
+[Random n= 200 run= 6] makespan=  1038.33 s | util= 75.27% | thr= 0.1926 task/s | resp=   425.91 s | LBI=0.028158 | RUR= 75.27% | 0 ms
+[Random n= 200 run= 7] makespan=  1311.49 s | util= 62.78% | thr= 0.1525 task/s | resp=   465.43 s | LBI=0.052099 | RUR= 62.78% | 0 ms
+[Random n= 200 run= 8] makespan=  1063.58 s | util= 75.68% | thr= 0.1880 task/s | resp=   436.58 s | LBI=0.042318 | RUR= 75.68% | 0 ms
+[Random n= 200 run= 9] makespan=  1352.62 s | util= 62.32% | thr= 0.1479 task/s | resp=   485.11 s | LBI=0.063269 | RUR= 62.32% | 0 ms
+[Random n= 200 run=10] makespan=  1384.38 s | util= 61.31% | thr= 0.1445 task/s | resp=   471.89 s | LBI=0.071274 | RUR= 61.31% | 0 ms
+[AOA    n= 500 run= 1] makespan=  1804.07 s | util= 94.53% | thr= 0.2772 task/s | resp=   883.42 s | LBI=0.003136 | RUR= 94.53% | 731 ms
+[AOA    n= 500 run= 2] makespan=  1824.71 s | util= 93.76% | thr= 0.2740 task/s | resp=   889.30 s | LBI=0.005679 | RUR= 93.76% | 783 ms
+[AOA    n= 500 run= 3] makespan=  1771.09 s | util= 95.78% | thr= 0.2823 task/s | resp=   877.03 s | LBI=0.003231 | RUR= 95.78% | 731 ms
+[AOA    n= 500 run= 4] makespan=  1801.28 s | util= 94.62% | thr= 0.2776 task/s | resp=   873.88 s | LBI=0.002902 | RUR= 94.62% | 727 ms
+[AOA    n= 500 run= 5] makespan=  1807.11 s | util= 94.26% | thr= 0.2767 task/s | resp=   885.32 s | LBI=0.003256 | RUR= 94.26% | 735 ms
+[AOA    n= 500 run= 6] makespan=  1791.50 s | util= 95.54% | thr= 0.2791 task/s | resp=   864.40 s | LBI=0.004200 | RUR= 95.54% | 726 ms
+[AOA    n= 500 run= 7] makespan=  1856.79 s | util= 90.96% | thr= 0.2693 task/s | resp=   901.30 s | LBI=0.008810 | RUR= 90.96% | 728 ms
+[AOA    n= 500 run= 8] makespan=  1790.30 s | util= 95.27% | thr= 0.2793 task/s | resp=   886.09 s | LBI=0.002404 | RUR= 95.27% | 725 ms
+[AOA    n= 500 run= 9] makespan=  1856.57 s | util= 92.29% | thr= 0.2693 task/s | resp=   874.64 s | LBI=0.008932 | RUR= 92.29% | 728 ms
+[AOA    n= 500 run=10] makespan=  1818.55 s | util= 93.67% | thr= 0.2749 task/s | resp=   886.31 s | LBI=0.003993 | RUR= 93.67% | 723 ms
+[Random n= 500 run= 1] makespan=  2936.11 s | util= 66.40% | thr= 0.1703 task/s | resp=  1043.21 s | LBI=0.079988 | RUR= 66.40% | 0 ms
+[Random n= 500 run= 2] makespan=  3242.65 s | util= 58.60% | thr= 0.1542 task/s | resp=  1003.88 s | LBI=0.057581 | RUR= 58.60% | 0 ms
+[Random n= 500 run= 3] makespan=  3197.91 s | util= 60.81% | thr= 0.1564 task/s | resp=  1007.84 s | LBI=0.061066 | RUR= 60.81% | 0 ms
+[Random n= 500 run= 4] makespan=  3333.86 s | util= 58.20% | thr= 0.1500 task/s | resp=   989.79 s | LBI=0.061690 | RUR= 58.20% | 0 ms
+[Random n= 500 run= 5] makespan=  2524.51 s | util= 73.45% | thr= 0.1981 task/s | resp=   960.35 s | LBI=0.035856 | RUR= 73.45% | 0 ms
+[Random n= 500 run= 6] makespan=  2889.50 s | util= 65.68% | thr= 0.1730 task/s | resp=   966.43 s | LBI=0.048225 | RUR= 65.68% | 0 ms
+[Random n= 500 run= 7] makespan=  3246.84 s | util= 59.24% | thr= 0.1540 task/s | resp=  1008.03 s | LBI=0.059023 | RUR= 59.24% | 0 ms
+[Random n= 500 run= 8] makespan=  3690.82 s | util= 53.20% | thr= 0.1355 task/s | resp=  1013.12 s | LBI=0.075729 | RUR= 53.20% | 0 ms
+[Random n= 500 run= 9] makespan=  3135.72 s | util= 61.38% | thr= 0.1595 task/s | resp=  1032.26 s | LBI=0.055599 | RUR= 61.38% | 0 ms
+[Random n= 500 run=10] makespan=  2292.27 s | util= 80.35% | thr= 0.2181 task/s | resp=   940.84 s | LBI=0.040213 | RUR= 80.35% | 0 ms
+[AOA    n=1000 run= 1] makespan=  3722.52 s | util= 90.37% | thr= 0.2686 task/s | resp=  1717.29 s | LBI=0.015852 | RUR= 90.37% | 1460 ms
+[AOA    n=1000 run= 2] makespan=  3628.62 s | util= 92.69% | thr= 0.2756 task/s | resp=  1726.62 s | LBI=0.011881 | RUR= 92.69% | 1455 ms
+[AOA    n=1000 run= 3] makespan=  3554.32 s | util= 94.23% | thr= 0.2813 task/s | resp=  1681.29 s | LBI=0.005221 | RUR= 94.23% | 1462 ms
+[AOA    n=1000 run= 4] makespan=  3717.28 s | util= 89.93% | thr= 0.2690 task/s | resp=  1724.79 s | LBI=0.010724 | RUR= 89.93% | 1475 ms
+[AOA    n=1000 run= 5] makespan=  3713.32 s | util= 90.39% | thr= 0.2693 task/s | resp=  1686.99 s | LBI=0.012690 | RUR= 90.39% | 1481 ms
+[AOA    n=1000 run= 6] makespan=  3681.53 s | util= 91.02% | thr= 0.2716 task/s | resp=  1706.83 s | LBI=0.010162 | RUR= 91.02% | 1484 ms
+[AOA    n=1000 run= 7] makespan=  3646.56 s | util= 91.42% | thr= 0.2742 task/s | resp=  1698.44 s | LBI=0.007344 | RUR= 91.42% | 1489 ms
+[AOA    n=1000 run= 8] makespan=  3549.31 s | util= 94.47% | thr= 0.2817 task/s | resp=  1681.46 s | LBI=0.005918 | RUR= 94.47% | 1462 ms
+[AOA    n=1000 run= 9] makespan=  3700.35 s | util= 90.34% | thr= 0.2702 task/s | resp=  1695.53 s | LBI=0.009911 | RUR= 90.34% | 1461 ms
+[AOA    n=1000 run=10] makespan=  3645.88 s | util= 92.01% | thr= 0.2743 task/s | resp=  1704.25 s | LBI=0.009584 | RUR= 92.01% | 1464 ms
+[Random n=1000 run= 1] makespan=  6027.44 s | util= 61.51% | thr= 0.1659 task/s | resp=  1857.38 s | LBI=0.051946 | RUR= 61.51% | 0 ms
+[Random n=1000 run= 2] makespan=  6101.90 s | util= 61.67% | thr= 0.1639 task/s | resp=  1910.48 s | LBI=0.056096 | RUR= 61.67% | 0 ms
+[Random n=1000 run= 3] makespan=  5495.15 s | util= 67.53% | thr= 0.1820 task/s | resp=  1847.57 s | LBI=0.048221 | RUR= 67.53% | 0 ms
+[Random n=1000 run= 4] makespan=  4908.03 s | util= 74.55% | thr= 0.2037 task/s | resp=  1817.05 s | LBI=0.043942 | RUR= 74.55% | 0 ms
+[Random n=1000 run= 5] makespan=  6351.82 s | util= 59.97% | thr= 0.1574 task/s | resp=  1913.00 s | LBI=0.062049 | RUR= 59.97% | 0 ms
+[Random n=1000 run= 6] makespan=  5909.74 s | util= 63.01% | thr= 0.1692 task/s | resp=  1872.79 s | LBI=0.050085 | RUR= 63.01% | 0 ms
+[Random n=1000 run= 7] makespan=  5439.47 s | util= 68.04% | thr= 0.1838 task/s | resp=  1849.51 s | LBI=0.047227 | RUR= 68.04% | 0 ms
+[Random n=1000 run= 8] makespan=  5904.25 s | util= 63.78% | thr= 0.1694 task/s | resp=  1883.55 s | LBI=0.056014 | RUR= 63.78% | 0 ms
+[Random n=1000 run= 9] makespan=  5705.21 s | util= 65.32% | thr= 0.1753 task/s | resp=  1841.23 s | LBI=0.049540 | RUR= 65.32% | 0 ms
+[Random n=1000 run=10] makespan=  6002.80 s | util= 63.02% | thr= 0.1666 task/s | resp=  1934.20 s | LBI=0.057749 | RUR= 63.02% | 0 ms
+
+=============== RINGKASAN (mean +- std, 10 run) ===============
+AOA    n= 100 | makespan    336.92+-   2.26 | util  99.23% | thr  0.2968 | resp    176.03 | LBI 0.000183 | RUR  99.23%
+Random n= 100 | makespan    565.61+- 110.98 | util  67.19% | thr  0.1832 | resp    201.98 | LBI 0.060827 | RUR  67.19%
+AOA    n= 200 | makespan    745.98+-   6.47 | util  98.85% | thr  0.2681 | resp    406.02 | LBI 0.000365 | RUR  98.85%
+Random n= 200 | makespan   1251.42+- 231.08 | util  67.56% | thr  0.1650 | resp    463.08 | LBI 0.056927 | RUR  67.56%
+AOA    n= 500 | makespan   1812.20+-  27.82 | util  94.07% | thr  0.2760 | resp    882.17 | LBI 0.004654 | RUR  94.07%
+Random n= 500 | makespan   3049.02+- 406.25 | util  63.73% | thr  0.1669 | resp    996.57 | LBI 0.057497 | RUR  63.73%
+AOA    n=1000 | makespan   3655.97+-  63.90 | util  91.69% | thr  0.2736 | resp   1702.35 | LBI 0.009929 | RUR  91.69%
+Random n=1000 | makespan   5784.58+- 413.19 | util  64.84% | thr  0.1737 | resp   1872.68 | LBI 0.052287 | RUR  64.84%
+
+Selesai. Semua hasil tersimpan di folder: D:\CloudSim\Metaheuristik_AOA_Implementasi\hasil_aoa
+Waktu selesai : Sun Nov 08 16:55:09 WIB 2026

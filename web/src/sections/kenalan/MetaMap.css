@@ -1,0 +1,60 @@
+/* MetaMap.css — bab 2 "Kenalan dengan AOA". Hanya variabel tokens.css. */
+
+.metamap { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.metamap__area {
+  position: relative;
+  min-height: 22rem;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 25% 25%, 25% 25%, 6.25% 6.25%, 6.25% 6.25%;
+  touch-action: none;
+}
+
+.metamap__axis {
+  position: absolute;
+  font: 600 var(--step--1) var(--font-mono);
+  color: var(--ink-2);
+  letter-spacing: 0.06em;
+  pointer-events: none;
+}
+.metamap__axis--x { bottom: var(--space-2); right: var(--space-3); }
+.metamap__axis--y { top: var(--space-3); left: var(--space-2); writing-mode: vertical-rl; transform: rotate(180deg); }
+
+.metamap__card {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--space-2) var(--space-4);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-key);
+  background: var(--paper-2);
+  color: var(--ink);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  box-shadow: var(--shadow-card);
+}
+.metamap__card:active { cursor: grabbing; }
+.metamap__card strong { font: 700 var(--step-1) var(--font-display); line-height: 1.1; }
+.metamap__card span { font: 500 var(--step--1) var(--font-mono); color: var(--ink-2); }
+
+.metamap__card--aoa {
+  border-color: var(--alg-aoa);
+  background: var(--paper-2);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--alg-aoa) 30%, transparent), var(--shadow-card);
+}
+.metamap__card--aoa strong { color: var(--alg-aoa); }
+
+.metamap__card.is-fokus { outline: 3px solid var(--sky); outline-offset: 2px; }
+
+.metamap__caption { font: 500 var(--step--1) var(--font-mono); color: var(--ink-2); }

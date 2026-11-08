@@ -1,0 +1,98 @@
+/* base.css — reset ringan, tipografi, kerangka halaman. Hanya memakai variabel dari tokens.css. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 var(--step-0)/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: var(--step-4); font-weight: 800; }
+h2 { font-size: var(--step-3); font-weight: 700; }
+p { margin: 0; max-width: var(--measure); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+main:focus { outline: none; }
+
+.skip-link { position: absolute; left: var(--space-3); top: -4rem; z-index: 100; background: var(--ink); color: var(--paper); padding: var(--space-2) var(--space-4); border-radius: var(--radius-key); }
+.skip-link:focus { top: var(--space-3); }
+
+/* rel navigasi bab */
+.rail { position: fixed; z-index: 50; left: var(--space-4); top: 50%; transform: translateY(-50%); display: none; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.rail a { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; }
+.rail__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--paper-3); box-shadow: inset 0 0 0 1.5px var(--ink-2); transition: transform var(--dur-fast) var(--ease-press); }
+.rail__label { font: 500 var(--step--1) var(--font-mono); opacity: 0; transform: translateX(-6px); transition: opacity var(--dur-fast), transform var(--dur-fast); white-space: nowrap; background: var(--paper-2); padding: 2px 8px; border-radius: 6px; }
+.rail a:hover .rail__dot, .rail a:focus-visible .rail__dot { transform: scale(1.5); background: var(--op-mul); }
+.rail a:hover .rail__label, .rail a:focus-visible .rail__label { opacity: 1; transform: none; }
+.theme-toggle { min-width: 2.4rem; min-height: 2.4rem; font-size: var(--step-0); }
+@media (min-width: 960px) { .rail { display: flex; } }
+@media (max-width: 959px) {
+  .rail { position: fixed; display: flex; flex-direction: row; top: auto; bottom: var(--space-3); left: 50%; transform: translateX(-50%); background: var(--paper-2); padding: var(--space-2) var(--space-4); border-radius: 999px; box-shadow: var(--shadow-card); }
+  .rail ol { flex-direction: row; }
+  .rail__label { display: none; }
+}
+
+/* hero & bab */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; gap: var(--space-4); padding: var(--space-8) var(--space-6); }
+.hero > * { max-width: var(--page-max); }
+.hero__kicker { font: 600 var(--step--1) var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+.hero__sub { font-size: var(--step-1); color: var(--ink-2); }
+.hero__status { align-self: flex-start; font-size: var(--step--1); }
+
+.chapter { position: relative; min-height: 80svh; padding: var(--space-8) var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; overflow: hidden; }
+.chapter:nth-of-type(even) { background: var(--paper-2); }
+.chapter__glyph { position: absolute; right: 4vw; top: 50%; transform: translateY(-50%); font: 800 clamp(10rem, 30vw, 26rem)/1 var(--font-display); color: var(--ink); opacity: 0.05; pointer-events: none; user-select: none; }
+.chapter__no { font: 600 var(--step--1) var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+.chapter__tagline { font-size: var(--step-1); color: var(--ink-2); }
+.chapter__todo { align-self: flex-start; font-size: var(--step--1); margin-top: var(--space-3); }
+.chapter > :not(.chapter__glyph) { position: relative; max-width: var(--page-max); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Tambahan F1 ---- */
+
+/* Bilah progres scroll */
+.scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--op-mul); z-index: 200; transform-origin: left; pointer-events: none; }
+
+/* Transisi bab reveal */
+@keyframes chapter-reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.chapter-visible { animation: chapter-reveal var(--dur-slow) var(--ease-inout) both; }
+@media (prefers-reduced-motion: reduce) { .chapter-visible { animation: none; } }
+
+/* Footer */
+.site-footer { text-align: center; padding: var(--space-5) var(--space-6); font: 500 var(--step--1) var(--font-mono); color: var(--ink-2); border-top: 1px solid var(--line); }
+
+/* Laci "Lihat lebih dalam" */
+details.laci { border-top: 1px solid var(--line); margin-top: var(--space-4); }
+details.laci summary { cursor: pointer; padding: var(--space-3) 0; font: 600 var(--step--1) var(--font-mono); letter-spacing: 0.08em; list-style: none; display: flex; align-items: center; gap: var(--space-2); }
+details.laci summary::before { content: '+'; font-size: var(--step-1); color: var(--op-add); transition: transform var(--dur-fast); }
+details.laci[open] summary::before { transform: rotate(45deg); }
+details.laci .laci-content { padding: var(--space-4) 0; }
+
+/* Chip bukti */
+.chip { display: inline-flex; align-items: center; gap: var(--space-1); padding: 2px var(--space-3); border-radius: 999px; font: 600 var(--step--1) var(--font-mono); border: 1.5px solid var(--line); background: var(--paper-2); cursor: pointer; }
+.chip:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
+
+/* Bilah progres bab (garis ukur di kiri bab) */
+.chapter { border-left: 3px solid transparent; }
+.chapter:nth-of-type(even) .chapter__ruler { background: var(--paper-3); }
+
+/* Lead bab — kalimat pembuka pendek (anggaran teks §4) */
+.chapter__lead { font-size: var(--step-1); max-width: var(--measure); }
+
+/* Placeholder visual utama (diganti komponen nyata di fase masing-masing) */
+.viz-ph { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); min-height: 40vh; width: min(100%, var(--page-max)); border: 1.5px dashed var(--line); border-radius: var(--radius-key); padding: var(--space-6); text-align: center; font-family: var(--font-mono); }
+.viz-ph__fase { font-size: var(--step--1); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+.viz-ph__momen { font-size: var(--step-1); max-width: 46ch; }
+
+/* Isi laci: pseudocode & daftar bernomor */
+.laci-pre { font: 500 var(--step--1)/1.7 var(--font-mono); white-space: pre-wrap; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius-key); padding: var(--space-4); overflow-x: auto; max-width: var(--page-max); }
+.laci-list { margin: 0; padding-left: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); max-width: var(--measure); }

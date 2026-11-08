@@ -1,0 +1,85 @@
+/* Hero.css — gaya bab 0 "Layar Menyala". Hanya memakai variabel tokens.css. */
+
+.hero-section {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: var(--space-8) var(--space-6);
+  gap: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Konten utama tengah */
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-5);
+  max-width: var(--page-max);
+}
+
+/* Layar LCD — tinggi dipesan agar tidak CLS */
+.hero-lcd {
+  min-height: 7rem;
+  border-radius: 10px;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 36rem;
+}
+
+.hero-lcd__label {
+  font: 600 var(--step--1) var(--font-mono);
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.hero-lcd__expr {
+  font: 700 var(--step-1) var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  /* Tinggi stabil saat ekspresi berganti */
+  min-height: 2em;
+}
+
+.hero-lcd__result {
+  font: 400 var(--step-2) var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grup empat keycap */
+.hero-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.hero-keys__hint {
+  width: 100%;
+  font: 500 var(--step--1) var(--font-mono);
+  color: var(--ink-2);
+  margin-top: var(--space-1);
+}
+
+/* Info kelompok pojok kanan bawah */
+.hero-credit {
+  font: 400 var(--step--1) var(--font-mono);
+  color: var(--ink-2);
+  align-self: flex-end;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* Animasi fade-in ekspresi LCD */
+@keyframes lcd-swap {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-lcd__expr--anim {
+  animation: lcd-swap var(--dur-med) var(--ease-inout) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-lcd__expr--anim { animation: none; }
+}

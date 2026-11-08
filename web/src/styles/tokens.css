@@ -1,0 +1,144 @@
+/* tokens.css — sumber tunggal nilai desain tema "Mesin Hitung Awan".
+   Semua warna/ukuran/gerak di CSS lain HARUS memakai variabel dari sini (jangan hardcode hex).
+   Mode: terang ("Kertas Milimeter") dan gelap ("Malam Lab"). Ikut sistem; bisa dipaksa lewat
+   <html data-theme="light|dark"> (tombol T). */
+
+:root {
+  /* ---- Permukaan & tinta (terang) ---- */
+  --paper: #f3eee1;
+  --paper-2: #eae3d0;
+  --paper-3: #ddd4bb;
+  --ink: #1b2430;
+  --ink-2: #4a5566;          /* teks sekunder; kontras >= 4.5:1 di atas --paper */
+  --line: rgba(27, 36, 48, 0.16);
+  --grid: rgba(27, 36, 48, 0.07);   /* kertas milimeter */
+  --grid-strong: rgba(27, 36, 48, 0.12);
+
+  /* ---- LCD kalkulator ---- */
+  --lcd-bg: #c4d1a3;
+  --lcd-ink: #1c2a17;
+  --lcd-ghost: rgba(28, 42, 23, 0.12);   /* segmen "mati" 88888 */
+
+  /* ---- Empat operator = bahasa warna utama ----
+     Hangat = eksplorasi (× ÷).  Dingin = eksploitasi (+ −).
+     JANGAN dipakai sebagai warna teks kecil di atas --paper (kontras rendah, terutama amber);
+     pakai sebagai isi/fill, garis tebal, atau glyph besar. Teks di atasnya pakai --on-op. */
+  --op-mul: #e4572e;
+  --op-div: #f2a541;
+  --op-add: #17a398;
+  --op-sub: #4b5ba8;
+  --on-op: #1b2430;
+
+  /* ---- Algoritma pada grafik hasil ---- */
+  --alg-aoa: #1f6fb5;        /* biru langit */
+  --alg-random: #c8553d;     /* terakota */
+  --sky: #7fb7e6;
+  --good: #2e8b57;
+  --warn: #c98a12;
+
+  /* ---- Tipografi ---- */
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans Variable", "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --step-3: clamp(2.1rem, 1.7rem + 2vw, 3.2rem);
+  --step-4: clamp(2.8rem, 2rem + 4vw, 5.2rem);   /* judul hero */
+
+  /* ---- Ruang, radius, bayangan ---- */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem;  --space-6: 2rem;   --space-7: 3rem;    --space-8: 5rem;
+  --radius-key: 14px;        /* keycap */
+  --radius-card: 18px;
+  --measure: 68ch;           /* lebar baris teks */
+  --page-max: 1180px;
+  --key-depth: 5px;          /* tebal "tombol" 3D */
+  --shadow-key: 0 var(--key-depth) 0 rgba(27, 36, 48, 0.28);
+  --shadow-card: 0 1px 0 var(--line), 0 12px 30px -18px rgba(27, 36, 48, 0.35);
+
+  /* ---- Gerak ---- */
+  --ease-press: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-med: 320ms;
+  --dur-slow: 700ms;
+
+  color-scheme: light;
+}
+
+/* ---- Gelap: "Malam Lab" ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #11161d; --paper-2: #171e27; --paper-3: #222c38;
+    --ink: #e9e4d6;  --ink-2: #a9b0bc;
+    --line: rgba(233, 228, 214, 0.16);
+    --grid: rgba(233, 228, 214, 0.05); --grid-strong: rgba(233, 228, 214, 0.1);
+    --lcd-bg: #0e2a1f; --lcd-ink: #7cffb2; --lcd-ghost: rgba(124, 255, 178, 0.1);
+    --op-mul: #ff7a4d; --op-div: #ffc266; --op-add: #3dd6c6; --op-sub: #8c9bff;
+    --alg-aoa: #6db7f2; --alg-random: #ff8a70; --good: #5fd39a; --warn: #f0b84a;
+    --shadow-key: 0 var(--key-depth) 0 rgba(0, 0, 0, 0.55);
+    --shadow-card: 0 1px 0 var(--line), 0 14px 34px -18px rgba(0, 0, 0, 0.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #11161d; --paper-2: #171e27; --paper-3: #222c38;
+  --ink: #e9e4d6;  --ink-2: #a9b0bc;
+  --line: rgba(233, 228, 214, 0.16);
+  --grid: rgba(233, 228, 214, 0.05); --grid-strong: rgba(233, 228, 214, 0.1);
+  --lcd-bg: #0e2a1f; --lcd-ink: #7cffb2; --lcd-ghost: rgba(124, 255, 178, 0.1);
+  --op-mul: #ff7a4d; --op-div: #ffc266; --op-add: #3dd6c6; --op-sub: #8c9bff;
+  --alg-aoa: #6db7f2; --alg-random: #ff8a70; --good: #5fd39a; --warn: #f0b84a;
+  --shadow-key: 0 var(--key-depth) 0 rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 1px 0 var(--line), 0 14px 34px -18px rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+/* ---- Utilitas dasar tema ---- */
+.paper-grid {            /* latar kertas milimeter: kotak kecil 24px + garis tebal tiap 120px */
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+
+.keycap {                /* tombol kalkulator 3D; ditekan = turun sedalam --key-depth */
+  font: 700 var(--step-1) var(--font-mono);
+  min-width: 3.2rem; min-height: 3.2rem;
+  border: 0; border-radius: var(--radius-key);
+  background: var(--paper-2); color: var(--ink);
+  box-shadow: var(--shadow-key);
+  transform: translateY(0);
+  transition: transform var(--dur-fast) var(--ease-press), box-shadow var(--dur-fast) var(--ease-press);
+  cursor: pointer;
+}
+.keycap:hover { transform: translateY(-1px); }
+.keycap:active, .keycap[aria-pressed="true"] { transform: translateY(var(--key-depth)); box-shadow: 0 0 0 transparent; }
+.keycap:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.keycap[data-op="mul"] { background: var(--op-mul); color: var(--on-op); }
+.keycap[data-op="div"] { background: var(--op-div); color: var(--on-op); }
+.keycap[data-op="add"] { background: var(--op-add); color: var(--on-op); }
+.keycap[data-op="sub"] { background: var(--op-sub); color: var(--paper); }
+
+.lcd {                   /* layar angka bergaya LCD */
+  font-family: var(--font-mono);
+  background: var(--lcd-bg); color: var(--lcd-ink);
+  border-radius: 10px; padding: var(--space-3) var(--space-4);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.25);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

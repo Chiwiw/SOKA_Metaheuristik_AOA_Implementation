@@ -1,0 +1,12 @@
+# Maven
+target/
+# Web
+web/node_modules/
+web/dist/
+web/.vite/
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
